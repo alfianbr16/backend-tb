@@ -29,7 +29,7 @@ func GetMakanan(c *fiber.Ctx) error {
 // GetMakananID godoc
 // @Summary Get By ID Data Makanan.
 // @Description Ambil per ID data makanan.
-// @Tags makanan
+// @Tags Makanan
 // @Accept json
 // @Produce json
 // @Param id path string true "Masukan ID"
@@ -70,8 +70,8 @@ func GetMakananID(c *fiber.Ctx) error {
 }
 
 // InsertDataMakanan godoc
-// @Summary Insert data makan.
-// @Description Input data makan.
+// @Summary Insert data makanan.
+// @Description Input data makanan.
 // @Tags Makanan
 // @Accept json
 // @Produce json
