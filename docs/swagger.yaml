@@ -3,31 +3,42 @@ definitions:
   controller.Hewan:
     properties:
       _id:
+        example: "123456789"
         type: string
       jenis:
+        example: Anjing
         type: string
       ras:
+        example: Pitbull
         type: string
       umur:
+        example: "8"
         type: string
     type: object
   controller.MakananHewan:
     properties:
       _id:
+        example: "123456789"
         type: string
       bahan:
+        example: Daging Ikan
         type: string
       berat:
+        example: "4"
         type: string
       harga:
+        example: "500000"
         type: string
       hewan:
         $ref: '#/definitions/controller.Hewan'
       jenismakanan:
+        example: Basah
         type: string
       merk:
+        example: Whiskas
         type: string
       rasa:
+        example: Tuna
         type: string
       tanggal:
         example: "2024-09-01T00:00:00Z"
@@ -37,27 +48,36 @@ definitions:
   controller.ReqHewan:
     properties:
       jenis:
+        example: Anjing
         type: string
       ras:
+        example: Pitbull
         type: string
       umur:
+        example: "8"
         type: string
     type: object
   controller.ReqMakananHewan:
     properties:
       bahan:
+        example: Daging Ikan
         type: string
       berat:
+        example: "4"
         type: string
       harga:
+        example: "500000"
         type: string
       hewan:
         $ref: '#/definitions/controller.ReqHewan'
       jenismakanan:
+        example: Basah
         type: string
       merk:
+        example: Whiskas
         type: string
       rasa:
+        example: Tuna
         type: string
       tanggal:
         example: "2024-09-01T00:00:00Z"
@@ -94,14 +114,14 @@ paths:
           description: Bad Request
         "500":
           description: Internal Server Error
-      summary: Delete data makanan.
+      summary: Delete Data MakananHewan.
       tags:
       - Makanan
   /ins:
     post:
       consumes:
       - application/json
-      description: Input data makan.
+      description: Input data makanan.
       parameters:
       - description: Payload Body [RAW]
         in: body
@@ -120,7 +140,7 @@ paths:
           description: Bad Request
         "500":
           description: Internal Server Error
-      summary: Insert data makan.
+      summary: Insert Data MakananHewan.
       tags:
       - Makanan
   /makanan:
@@ -135,7 +155,7 @@ paths:
           description: OK
           schema:
             $ref: '#/definitions/controller.MakananHewan'
-      summary: Get All Data Makanan.
+      summary: Get All Data MakananHewan.
       tags:
       - Makanan
   /makanan/{id}:
@@ -162,9 +182,9 @@ paths:
           description: Not Found
         "500":
           description: Internal Server Error
-      summary: Get By ID Data Makanan.
+      summary: Get By ID Data MakananHewan.
       tags:
-      - makanan
+      - Makanan
   /update/{id}:
     put:
       consumes:
@@ -193,7 +213,7 @@ paths:
           description: Bad Request
         "500":
           description: Internal Server Error
-      summary: Update data makanan.
+      summary: Update Data MakananHewan.
       tags:
       - Makanan
 schemes:

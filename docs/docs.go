@@ -31,7 +31,7 @@ const docTemplate = `{
                 "tags": [
                     "Makanan"
                 ],
-                "summary": "Delete data makanan.",
+                "summary": "Delete Data MakananHewan.",
                 "parameters": [
                     {
                         "type": "string",
@@ -56,7 +56,7 @@ const docTemplate = `{
         },
         "/ins": {
             "post": {
-                "description": "Input data makan.",
+                "description": "Input data makanan.",
                 "consumes": [
                     "application/json"
                 ],
@@ -66,7 +66,7 @@ const docTemplate = `{
                 "tags": [
                     "Makanan"
                 ],
-                "summary": "Insert data makan.",
+                "summary": "Insert Data MakananHewan.",
                 "parameters": [
                     {
                         "description": "Payload Body [RAW]",
@@ -106,7 +106,7 @@ const docTemplate = `{
                 "tags": [
                     "Makanan"
                 ],
-                "summary": "Get All Data Makanan.",
+                "summary": "Get All Data MakananHewan.",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -127,9 +127,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "makanan"
+                    "Makanan"
                 ],
-                "summary": "Get By ID Data Makanan.",
+                "summary": "Get By ID Data MakananHewan.",
                 "parameters": [
                     {
                         "type": "string",
@@ -170,7 +170,7 @@ const docTemplate = `{
                 "tags": [
                     "Makanan"
                 ],
-                "summary": "Update data makanan.",
+                "summary": "Update Data MakananHewan.",
                 "parameters": [
                     {
                         "type": "string",
@@ -211,16 +211,20 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "_id": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "123456789"
                 },
                 "jenis": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Anjing"
                 },
                 "ras": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Pitbull"
                 },
                 "umur": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "8"
                 }
             }
         },
@@ -228,28 +232,35 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "_id": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "123456789"
                 },
                 "bahan": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Daging Ikan"
                 },
                 "berat": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "4"
                 },
                 "harga": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "500000"
                 },
                 "hewan": {
                     "$ref": "#/definitions/controller.Hewan"
                 },
                 "jenismakanan": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Basah"
                 },
                 "merk": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Whiskas"
                 },
                 "rasa": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Tuna"
                 },
                 "tanggal": {
                     "type": "string",
@@ -262,13 +273,16 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "jenis": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Anjing"
                 },
                 "ras": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Pitbull"
                 },
                 "umur": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "8"
                 }
             }
         },
@@ -276,25 +290,31 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "bahan": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Daging Ikan"
                 },
                 "berat": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "4"
                 },
                 "harga": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "500000"
                 },
                 "hewan": {
                     "$ref": "#/definitions/controller.ReqHewan"
                 },
                 "jenismakanan": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Basah"
                 },
                 "merk": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Whiskas"
                 },
                 "rasa": {
-                    "type": "string"
+                    "type": "string",
+                    "example": "Tuna"
                 },
                 "tanggal": {
                     "type": "string",

@@ -14,7 +14,7 @@ import (
 )
 
 // GetMakanan godoc
-// @Summary Get All Data Makanan.
+// @Summary Get All Data MakananHewan.
 // @Description Mengambil semua data makanan.
 // @Tags Makanan
 // @Accept json
@@ -27,7 +27,7 @@ func GetMakanan(c *fiber.Ctx) error {
 }
 
 // GetMakananID godoc
-// @Summary Get By ID Data Makanan.
+// @Summary Get By ID Data MakananHewan.
 // @Description Ambil per ID data makanan.
 // @Tags Makanan
 // @Accept json
@@ -70,7 +70,7 @@ func GetMakananID(c *fiber.Ctx) error {
 }
 
 // InsertDataMakanan godoc
-// @Summary Insert data makanan.
+// @Summary Insert Data MakananHewan.
 // @Description Input data makanan.
 // @Tags Makanan
 // @Accept json
@@ -83,7 +83,6 @@ func GetMakananID(c *fiber.Ctx) error {
 func InsertDataMakanan(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
 	var makan inimodel.MakananHewan
-
 	// Parse body request ke struct makan
 	if err := c.BodyParser(&makan); err != nil {
 		return c.Status(http.StatusInternalServerError).JSON(fiber.Map{
@@ -91,7 +90,6 @@ func InsertDataMakanan(c *fiber.Ctx) error {
 			"message": err.Error(),
 		})
 	}
-
 	// Lakukan operasi insert ke database
 	insertedID, err := cek.InsertMakanan(db, "makananhewan",
 		makan.Hewan,
@@ -107,7 +105,6 @@ func InsertDataMakanan(c *fiber.Ctx) error {
 			"message": err.Error(),
 		})
 	}
-
 	// Berhasil menyimpan data
 	return c.Status(http.StatusOK).JSON(fiber.Map{
 		"status":      http.StatusOK,
@@ -117,7 +114,7 @@ func InsertDataMakanan(c *fiber.Ctx) error {
 }
 
 // UpdateData godoc
-// @Summary Update data makanan.
+// @Summary Update Data MakananHewan.
 // @Description Ubah data makanan.
 // @Tags Makanan
 // @Accept json
@@ -130,10 +127,8 @@ func InsertDataMakanan(c *fiber.Ctx) error {
 // @Router /update/{id} [put]
 func UpdateData(c *fiber.Ctx) error {
 	db := config.Ulbimongoconn
-
 	// Get the ID from the URL parameter
 	id := c.Params("id")
-
 	// Parse the ID into an ObjectID
 	objectID, err := primitive.ObjectIDFromHex(id)
 	if err != nil {
@@ -142,7 +137,6 @@ func UpdateData(c *fiber.Ctx) error {
 			"message": err.Error(),
 		})
 	}
-
 	// Parse the request body into a Presensi object
 	var makan inimodel.MakananHewan
 	if err := c.BodyParser(&makan); err != nil {
@@ -151,7 +145,6 @@ func UpdateData(c *fiber.Ctx) error {
 			"message": err.Error(),
 		})
 	}
-
 	// Call the UpdateMakanan function with the parsed ID and the MakananHewan object
 	err = cek.UpdateMakanan(db, "makananhewan",
 		objectID,
@@ -176,7 +169,7 @@ func UpdateData(c *fiber.Ctx) error {
 }
 
 // DeleteMakananByID godoc
-// @Summary Delete data makanan.
+// @Summary Delete Data MakananHewan.
 // @Description Hapus data makanan.
 // @Tags Makanan
 // @Accept json
