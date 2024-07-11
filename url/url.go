@@ -4,7 +4,7 @@ import (
 	"github.com/alfianbr16/backend-tb/controller"
 
 	"github.com/gofiber/fiber/v2"
-	// "github.com/gofiber/swagger" // swagger handler
+	"github.com/gofiber/swagger"
 )
 
 func Web(page *fiber.App) {
@@ -14,5 +14,5 @@ func Web(page *fiber.App) {
 	page.Put("/update/:id", controller.UpdateData)
 	page.Delete("/delete/:id", controller.DeleteMakananByID)
 
-	// page.Get("/docs/*", swagger.HandlerDefault)
+	page.Get("/docs/*", swagger.HandlerDefault)
 }

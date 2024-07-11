@@ -10,7 +10,7 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 
-	// _ "github.com/agung6544/be-tbku/docs"
+	_ "github.com/alfianbr16/backend-tb/docs"
 
 )
 
@@ -19,10 +19,10 @@ import (
 // @description This is a sample swagger for Fiber
 
 // @contact.name API Support
-// @contact.url https://github.com/agung6544
-// @contact.email 714220039@std.ulbi.ac.id
+// @contact.url https://github.com/alfianbr16
+// @contact.email 714220048@std.ulbi.ac.id
 
-// @host be-tbku1-179bbc23801d.herokuapp.com
+// @host backend-tb-97f8facdbf4c.herokuapp.com
 // @BasePath /
 // @schemes https http
 

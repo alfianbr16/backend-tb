@@ -4,36 +4,38 @@ import (
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
-type Ayam struct {
-	ID             primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty" example:"123456789"`
-	Jenis          string             `bson:"jenis,omitempty" json:"jenis,omitempty" example:"Ayam Saigon"`
-	Umur		   string             `bson:"umur,omitempty" json:"umur,omitempty" example:"123456789"`
-	Bobot          string             `bson:"bobot,omitempty" json:"bobot,omitempty" example:"123456789"`
-	Tinggi         string             `bson:"tinggi,omitempty" json:"tinggi,omitempty" example:"123456789"`
-	Jenis_Kelamin  string             `bson:"jenis_kelamin,omitempty" json:"jenis_kelamin,omitempty" example:"Jantan"`
-	Harga		   string             `bson:"harga,omitempty" json:"harga,omitempty" example:"12.000"`
+type Hewan struct {
+	ID           	primitive.ObjectID 	`bson:"_id,omitempty" json:"_id,omitempty" example:"123456789"`
+	Jenis 	        string             	`bson:"jenis,omitempty" json:"jenis,omitempty" example:"Anjing"`
+	Umur 	  		string 			 	`bson:"umur,omitempty" json:"umur,omitempty" example:"8"`
+	Ras 			string 			 	`bson:"ras,omitempty" json:"ras,omitempty" example:"Pitbull"`
 }
 
-type Order struct {
-	ID           	  primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
-	Ayam 	          Ayam               `bson:"ayam,omitempty" json:"ayam,omitempty"`
-	Nama_Pemesan 	  string 			 `bson:"nama_pemesan,omitempty" json:"nama_pemesan,omitempty" example:"Dimas"`
-	Alamat 			  string 			 `bson:"alamat,omitempty" json:"alamat,omitempty" example:"Bandung"`
-	Tanggal_Pemesanan primitive.DateTime `bson:"tanggal_pemesanan,omitempty" json:"tanggal_pemesanan,omitempty" swaggertype:"string" example:"2024-09-01T00:00:00Z" format:"date-time"`
+type MakananHewan struct {
+	ID              primitive.ObjectID  `bson:"_id,omitempty" json:"_id,omitempty" example:"123456789"`
+	Hewan           Hewan             	`bson:"hewan,omitempty" json:"hewan,omitempty"`
+	JenisMakanan    string             	`bson:"jenismakanan,omitempty" json:"jenismakanan,omitempty" example:"Basah"`
+	Bahan         	string             	`bson:"bahan,omitempty" json:"bahan,omitempty" example:"Daging Ikan"`
+	Berat           string             	`bson:"berat,omitempty" json:"berat,omitempty" example:"4"`
+	Rasa         	string             	`bson:"rasa,omitempty" json:"rasa,omitempty" example:"Tuna"`
+	Merk		    string             	`bson:"merk,omitempty" json:"merk,omitempty" example:"Whiskas"`
+	Harga		    string             	`bson:"harga,omitempty" json:"harga,omitempty" example:"500000"`
+	Tanggal  		primitive.DateTime 	`bson:"tanggal,omitempty" json:"tanggal,omitempty" swaggertype:"string" example:"2024-09-01T00:00:00Z" format:"date-time"`
 }
 
-type ReqAyam struct {
-	Jenis          string             `bson:"jenis,omitempty" json:"jenis,omitempty" example:"Ayam Saigon"`
-	Umur		   string             `bson:"umur,omitempty" json:"umur,omitempty" example:"123456789"`
-	Bobot          string             `bson:"bobot,omitempty" json:"bobot,omitempty" example:"123456789"`
-	Tinggi         string             `bson:"tinggi,omitempty" json:"tinggi,omitempty" example:"123456789"`
-	Jenis_Kelamin  string             `bson:"jenis_kelamin,omitempty" json:"jenis_kelamin,omitempty" example:"Jantan"`
-	Harga		   string             `bson:"harga,omitempty" json:"harga,omitempty" example:"12.000"`
+type ReqHewan struct {
+	Jenis 	        string             	`bson:"jenis,omitempty" json:"jenis,omitempty" example:"Anjing"`
+	Umur 	  		string 			 	`bson:"umur,omitempty" json:"umur,omitempty" example:"8"`
+	Ras 			string 			 	`bson:"ras,omitempty" json:"ras,omitempty" example:"Pitbull"`
 }
 
-type ReqOrder struct {
-	Ayam 	          ReqAyam               `bson:"ayam,omitempty" json:"ayam,omitempty"`
-	Nama_Pemesan 	  string 			 `bson:"nama_pemesan,omitempty" json:"nama_pemesan,omitempty" example:"Dimas"`
-	Alamat 			  string 			 `bson:"alamat,omitempty" json:"alamat,omitempty" example:"Bandung"`
-	Tanggal_Pemesanan primitive.DateTime `bson:"tanggal_pemesanan,omitempty" json:"tanggal_pemesanan,omitempty" swaggertype:"string" example:"2024-09-01T00:00:00Z" format:"date-time"`
+type ReqMakananHewan struct {
+	Hewan           ReqHewan             	`bson:"hewan,omitempty" json:"hewan,omitempty"`
+	JenisMakanan    string             	`bson:"jenismakanan,omitempty" json:"jenismakanan,omitempty" example:"Basah"`
+	Bahan         	string             	`bson:"bahan,omitempty" json:"bahan,omitempty" example:"Daging Ikan"`
+	Berat           string             	`bson:"berat,omitempty" json:"berat,omitempty" example:"4"`
+	Rasa         	string             	`bson:"rasa,omitempty" json:"rasa,omitempty" example:"Tuna"`
+	Merk		    string             	`bson:"merk,omitempty" json:"merk,omitempty" example:"Whiskas"`
+	Harga		    string             	`bson:"harga,omitempty" json:"harga,omitempty" example:"500000"`
+	Tanggal  		primitive.DateTime 	`bson:"tanggal,omitempty" json:"tanggal,omitempty" swaggertype:"string" example:"2024-09-01T00:00:00Z" format:"date-time"`
 }
